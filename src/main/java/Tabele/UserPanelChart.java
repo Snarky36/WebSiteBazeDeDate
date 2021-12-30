@@ -1,10 +1,7 @@
-package main;
+package Tabele;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import main.OracleSQL;
+
 /**
- * Servlet implementation class UserPanel
+ * Servlet implementation class UserPanelChart
  */
-@WebServlet("/UserPanel")
-public class UserPanel extends HttpServlet {
+@WebServlet("/UserPanelChart")
+public class UserPanelChart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserPanel() {
+    public UserPanelChart() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +32,20 @@ public class UserPanel extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/WEB-INF/Pages/UserPanel.jsp").forward(request, response);
+		OracleSQL sql = new OracleSQL();
+		try {
+			int[] totalFonduri = sql.userPanelTotalFonds();
+			request.setAttribute("totalFonds", totalFonduri[0]);
+			request.setAttribute("totalFondsMaster", totalFonduri[1]);
+			request.setAttribute("totalFondsVisa", totalFonduri[2]);			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.getRequestDispatcher("/WEB-INF/Pages/Tabele/UserPanelChart.jsp").forward(request, response);
 	}
 
 	/**

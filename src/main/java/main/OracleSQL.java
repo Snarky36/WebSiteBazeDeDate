@@ -37,6 +37,35 @@ public class OracleSQL {
 		  con.close(); 
 	}
 	
+	public int[] userPanelTotalFonds()throws ClassNotFoundException, SQLException{
+		Connection con = getcon();
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT totalFonduri from dual");
+        
+        int[] var = new int[3];
+        
+        
+        rs.next();
+        var[0]= rs.getInt(1);
+        
+        Statement stmt2 = con.createStatement();
+        ResultSet rs2 = stmt2.executeQuery("SELECT ProcentMaster('"+var[0] +"') FROM dual");
+        
+        rs2.next();
+        var[1] = rs2.getInt(1);
+        
+        Statement stmt3 = con.createStatement();
+        ResultSet rs3 = stmt3.executeQuery("SELECT ProcentVisa('"+ var[0]+"') FROM dual");
+        rs3.next();
+        var[2] = rs3.getInt(1);
+        
+        System.out.println(var[0]+ " "+ var[1]+ " "+var[2]);
+        
+        return var;
+        
+	}
+	
+	
 	public boolean checkUserExists(String email) throws ClassNotFoundException, SQLException {
         boolean exista=false;
         Connection con = getcon();

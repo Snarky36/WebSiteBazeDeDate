@@ -91,7 +91,8 @@ if(session.getAttribute("username") == null){
 
 <!-- First Grid -->
 
-
+<iframe frameBorder="0" id="UserPanelChart" src="${pageContext.request.contextPath}/UserPanelChart" style="width:100%; height:400px" scrolling="auto">
+</iframe>
 
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
