@@ -1,0 +1,119 @@
+@charset "ISO-8859-1";
+.usernamePanel{
+	float: right;
+	margin-right: 5px;
+	margin-top:8px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	padding: 2px;
+	
+	
+
+}
+
+.aranjare{
+display: grid;
+grid-template-columns: auto auto auto;
+padding: 10px;
+}
+
+.buttonCards input{
+	background-color: #657DA7;
+	border: 2px solid #657DA7;
+	border-radius: 4px;
+	color: #fff;
+	display:inline;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	margin-left:-0.5%;
+	
+	cursor: pointer;
+    transition-duration: 0.4s;
+}
+.buttonCards input:hover{
+	background-color: #455C85;
+	border: 2px solid #455C85;
+    color: white;
+}
+
+.textinput{
+	margin-left:10px;
+	margin-top:1%;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    
+    text-align: center;
+	
+	}
+.textinput p{
+	display:inline;
+}
+.textinput input{
+	
+	
+
+	}
+	
+.button1{
+	background-color: #657DA7;
+	border: 2px solid #657DA7;
+	border-radius: 4px;
+	color: #fff;
+	margin-right:4px;
+	display:inline-block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 15%;
+	cursor: pointer;
+    transition-duration: 0.4s;
+}
+.button1:hover{
+	background-color: #455C85;
+	border: 2px solid #455C85;
+    color: white;
+}
+.tableButtons{
+	float:center;
+	margin-left:25%;
+    width: 50%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+.tableButtons,th, td{
+   border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  
+}
+
+
+.tableButtons tr:nth-child(even){background-color: #f2f2f2;}
+
+.tableButtons tr:hover {background-color: #ddd;}
+
+.tableButtons th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #657DA7;
+  color: white;
+  
+}
+.buttonCards{
+	
+	margin-left:3%;
+	align-items:center;
+	float:center;
+}
+
+.PersoaneCredit{
+	float:center;
+	align-items:center;
+	margin-left:38%;
+    width: 60%;
+}
