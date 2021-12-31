@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <title>ZBank</title>
+<script>
+function creeazaCard(){
+document.getElementById("Tabel03").src = "${pageContext.request.contextPath}/Tabel03a?card=ture";
+}
+</script>
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -91,23 +98,22 @@ if(session.getAttribute("username") == null){
 
 <!-- First Grid -->
 
-<iframe frameBorder="0" id="UserPanelChart" src="${pageContext.request.contextPath}/UserPanelChart" style="width:100%; height:400px" scrolling="auto">
+<iframe frameBorder="0" id="UserPanelChart" src="${pageContext.request.contextPath}/UserPanelChart" style="width:100%; height:550px" scrolling="auto">
 </iframe>
 
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      <image src="${pageContext.request.contextPath}/Resurse/AdaugaCarduri.png" width="300px" height="300px"></image>
     </div>
 
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h1>Nu ai un card?</h1>
+      <h5 class="w3-padding-32">La noi poti sa iti creezi unul simplu si usor chiar din aplicatie!</h5>
+     <div class= "buttonCards">
+     <button class="buttonCreeaza" style="widht:100px" OnClick="creeazaCard();">Creeaza Card!</button>
+     </div>
     </div>
   </div>
 </div>

@@ -5,9 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Chart Page</title>
-</head>
-<body>
-<div id="piechart"></div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -48,6 +45,43 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
+    
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
 
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Fonduri Totale', 'Fonduri Mastercard', 'Fonduri Visa Card'],
+          ['Aug',  10105,              5380,                4725,            ],
+          ['Sept', 13500,              8000,               5500,            ],
+          ['Oct',  17850,              7850,             10000,            ],
+          ['Nov',  22765,              11705,            11060,            ],
+          ['Dec',  10570,              3570,              7000,            ]
+        ]);
+
+        var options = {
+          colors:['#FA7805','#A70C0C','#0C1FA7'],
+          title : 'Fondurile bancii/ luna',
+          vAxis: {title: 'Euro'},
+          hAxis: {title: 'Ultimele 5'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+
+<body>
+<div class="charts">
+<div id="piechart" style="width: 40%; height: 500px;"></div>
+
+<div id="chart_div" style="width:70%;height: 463px;float: right;margin-top: -28%;">
+</div>
+</div>
 </body>
 </html>

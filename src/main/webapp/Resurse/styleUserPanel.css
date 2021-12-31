@@ -76,6 +76,32 @@ padding: 10px;
 	border: 2px solid #455C85;
     color: white;
 }
+
+.charts{
+	display:inline-block;
+}
+
+.buttonCreeaza{
+	background-color: #657DA7;
+	border: 2px solid #657DA7;
+	border-radius: 4px;
+	color: #fff;
+	margin-right:4px;
+	display:inline-block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	
+	cursor: pointer;
+    transition-duration: 0.4s;
+}
+.buttonCreeaza:hover{
+	background-color: #455C85;
+	border: 2px solid #455C85;
+    color: white;
+}
+
 .tableButtons{
 	float:center;
 	margin-left:25%;
