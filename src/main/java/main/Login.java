@@ -78,6 +78,7 @@ public class Login extends HttpServlet {
 				String email  = request.getParameter("email");
 				//String username = email.substring(0,5) + "...";
 				session.setAttribute("username", email + " ");
+				request.setAttribute("UserEmail", email);
 				int permission = sql.getPermission(email);
 				System.out.println(permission);
 				session.setAttribute("permission", ""+permission);

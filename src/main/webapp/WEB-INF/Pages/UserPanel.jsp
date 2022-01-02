@@ -7,6 +7,9 @@
 function creeazaCard(){
 document.getElementById("Tabel03").src = "${pageContext.request.contextPath}/Tabel03a?card=ture";
 }
+function viewFunds(){
+	document.getElementById("Tabel03").src = "${pageContext.request.contextPath}/Tabel03a?card=ture";
+	}
 </script>
 
 
@@ -97,10 +100,35 @@ if(session.getAttribute("username") == null){
 </header>
 
 <!-- First Grid -->
+  <% if (session.getAttribute("permission").equals("0") ) {%>
+  
+<form id="form" class="form" method="post" action= ${pageContext.request.contextPath}/UserPanel>
+	
+<center><img  src="${pageContext.request.contextPath}/Resurse/UsePanelCard.png" width="350px" height="280px">
+<% if(session.getAttribute("view")!=null && session.getAttribute("view").equals("true")){%>
 
+<form id="form" class="form" method="post" action= ${pageContext.request.contextPath}/UserPanel>
+<br><h2 style="font-family: Georgia, serif; margin-top:-2%"><%=session.getAttribute("totalFunds")%> RON</h2>
+<div class= "buttonCards2">
+<button class="button2">Ascunde Fonduri</button>
+</div>
+</form>
+<%}else { %>
+<div class= "buttonCards2">
+<button class="button2">Vizioneaza fonduri</button>
+</div>
+<%} %>
+</center>
+</form>
+
+
+  <%}
+  else{
+  %>
 <iframe frameBorder="0" id="UserPanelChart" src="${pageContext.request.contextPath}/UserPanelChart" style="width:100%; height:550px" scrolling="auto">
 </iframe>
 
+<%} %>
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">

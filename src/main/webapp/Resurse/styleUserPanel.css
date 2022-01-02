@@ -56,6 +56,34 @@ padding: 10px;
 
 	}
 	
+	.buttonCards2{
+
+	align-items:center;
+	float:center;
+}
+	
+.button2{
+	background-color: #657DA7;
+	border: 2px solid #657DA7;
+	border-radius: 4px;
+	color: #fff;
+	display:inline-block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom:30px;
+	width: 15%;
+	cursor: pointer;
+    transition-duration: 0.4s;
+}
+.button2:hover{
+	background-color: #455C85;
+	border: 2px solid #455C85;
+    color: white;
+}
+	
+	
 .button1{
 	background-color: #657DA7;
 	border: 2px solid #657DA7;

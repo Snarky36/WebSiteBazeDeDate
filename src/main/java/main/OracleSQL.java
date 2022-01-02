@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class OracleSQL {
 	private static int idAccounts;
 	private static int idPersoane;
+	private static boolean totalFunds = false;
 	private Connection getcon() throws SQLException, ClassNotFoundException {
 
 		     Class.forName("oracle.jdbc.driver.OracleDriver");  
@@ -29,6 +30,14 @@ public class OracleSQL {
 			  
 		return con;
 }
+	
+	public String totalFundsButton() {
+		totalFunds = !totalFunds;
+		String funds = String.valueOf(totalFunds);
+	   return funds;
+	}
+	
+	
 	public void getInfo() throws SQLException, ClassNotFoundException {
 		Connection con = getcon();
 		Statement stmt = con.createStatement();	  
@@ -63,6 +72,16 @@ public class OracleSQL {
         
         return var;
         
+	}
+	
+	public int viewFunds(String email)throws ClassNotFoundException, SQLException{
+		Connection con = getcon();
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT SUM(Sold) FROM Conturi WHERE idpers = (SELECT idpers FROM Persoane where email = TRIM(' ' FROM '"+email+"'))");
+        rs.next();
+        int soldCurent = rs.getInt(1);
+        System.out.println(soldCurent);
+        return soldCurent;
 	}
 	
 	
